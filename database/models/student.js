@@ -4,7 +4,7 @@ const db = require("../db");
 const Student = db.define("student", {
   firstName: { type: Sequelize.STRING, allowNull: false },
   lastName: { type: Sequelize.STRING, allowNull: false },
-  email: { type: Sequelize.STRING, allowNull: true, unique: true },
+  email: { type: Sequelize.STRING, allowNull: false, unique: true },
   gpa: {
     type: Sequelize.DECIMAL(2, 1),
     allowNull: false,
@@ -17,7 +17,7 @@ const Student = db.define("student", {
   imageUrl: {
     type: Sequelize.STRING,
     defaultValue: "https://via.placeholder.com/480x240?text=Placeholder",
-    allowNull: true,
+    allowNull: false,
   },
 });
 
